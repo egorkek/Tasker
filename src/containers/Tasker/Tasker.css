@@ -1,0 +1,12 @@
+.Tasker{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    height: 100%;
+}
+@media (max-width: 600px) {
+
+    .Tasker{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}

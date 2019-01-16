@@ -1,0 +1,40 @@
+.Task{
+    display: grid;
+    justify-content: center;
+}
+
+.Task li{
+
+    display: grid;
+    grid-template-columns: 1fr;
+    min-width: 40vw;
+    background: white;
+    color: black;
+    padding: 20px;
+    border: 4px solid #eee;
+    margin-bottom: 10px;
+    border-radius: 7px;
+    transition: all 0.7s ease-in-out;
+}
+.Task h3{
+    margin: 0;
+    font-size: 30px;
+    padding-right: 50px;
+    display: inline-block;
+
+
+
+}
+.Task small{
+    font-size: 10px;
+    padding-top: 10px;
+    text-align: right;
+    float: right;
+    display: inline-block;
+}
+
+.Task li:hover{
+    border: 4px solid rebeccapurple;
+    transform: scale(1.01, 1.01);
+
+}

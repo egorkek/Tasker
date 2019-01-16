@@ -1,0 +1,43 @@
+.Button{
+    display: inline-block;
+    padding: 10px 20px;
+    outline: none;
+    font-size: 10px;
+    background: none;
+    border-radius: 15px;
+    font-weight: bold;
+    margin: 10px;
+
+
+
+}
+.Button:hover{
+    outline: none;
+    box-shadow: inset 0px 0px 5px 0px  rgba(0,0,0, 0.7);
+}
+
+.Button:active{
+    outline: none;
+}
+.red{
+    background: rgba(199, 50, 50, 1);
+    color: white;
+
+}
+.green{
+    background: rgba(66, 191, 59, 1);
+    color: white;
+
+}
+
+.headerBtn{
+    background: inherit;
+    width: 50px;
+    color: white;
+    border-radius: 5px;
+    height: 49px;
+    margin: 0;
+    text-align: center;
+    padding: 0;
+
+}

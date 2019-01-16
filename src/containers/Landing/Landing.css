@@ -1,0 +1,16 @@
+.Landing{
+    display: grid;
+    height: 100%;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+
+}
+
+.Landing i {
+    font-size: 400px;
+    color: red;
+    background-color: black;
+    border-radius: 100px;
+}

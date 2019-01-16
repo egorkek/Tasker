@@ -1,0 +1,27 @@
+.Input input{
+    border: 1px solid grey;
+    padding: 7px 10px;
+    border-radius: 15px;
+    margin: 5px;
+    outline: none;
+
+
+}
+
+.Input input:active{
+    outline: none;
+}
+.Input input:hover{
+    outline: none;
+}
+
+.Input label{
+    font-size: 10px;
+    color: grey;
+}
+
+
+.Input .error{
+    color: red;
+    border: 1px solid red;
+}
