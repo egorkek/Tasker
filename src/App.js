@@ -13,14 +13,25 @@ class App extends Component {
         this.props.autoLogin()
 
     }
+    
   render() {
+      let pages = (
+          <Switch>
+              <Route path={'/main'} component={Tasker}/>
+
+              <Route path={'/'} exact component={Landing}/>
+          </Switch>
+
+      )
+      if (!this.props.isAutenticated){
+          pages = (
+              <Route path={'/'} exact component={Tasker}/>
+
+          )
+      }
     return (
         <Layout>
-            <Switch>
-                <Route path={'/main'} component={Tasker}/>
-
-                <Route path={'/'} exact component={Landing}/>
-            </Switch>
+            {pages}
         </Layout>
 
     );
