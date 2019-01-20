@@ -4,38 +4,35 @@ import MyForm from "../../components/FormOftasks/MyForm";
 import ListOfTasks from '../../components/ListOfTasks/ListOfTasks'
 import {connect} from 'react-redux'
 import Loader from "../../components/UI/Loader/Loader";
-import {getTasks} from "../../store/actions/getTasks";
+import {getTasks} from '../../store/actions/getTasks'
 
 class Tasker extends React.Component{
-   componentDidMount(){
-       this.props.getTasks()
-   }
+
 
 
 
 
     render(){
-       console.log('123',this.props.tasks.loading);
+
+
 
 
         return(
             <Fragment>
-                {!this.props.tasks.loading ? <Loader/> :
+                {this.props.state.loading ? <Loader/> :
                     <div className={classes.Tasker}>
 
 
-                        <MyForm
-                            name={this.props.auth.username}
-                        />
-                        {/*<ListOfTasks*/}
-                            {/*tasks={this.props.tasks}*/}
+                            <MyForm
+                                name={this.props.state.keyForBD}
+                            />
+                         <ListOfTasks
+                             tasks={this.props.state.tasks}
+                         />
 
-
-
-
-                        {/*/>*/}
                     </div>
-                }
+                    }
+
             </Fragment>
         )
 
@@ -46,8 +43,7 @@ class Tasker extends React.Component{
 
 function mapStateToProps (state){
     return{
-        auth: state.auth,
-        tasks: state.tasks
+        state: state.auth
     }
 
 }

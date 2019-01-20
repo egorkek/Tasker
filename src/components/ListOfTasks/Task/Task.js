@@ -2,6 +2,7 @@ import React from 'react'
 import classes from './Task.css'
 import Button from '../../UI/Button/Button'
 const Task = (props)=>{
+    console.log(props)
     return(
         <div className={classes.Task}>
         {props.task.map((obj, index)=>{

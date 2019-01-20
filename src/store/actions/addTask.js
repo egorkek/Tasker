@@ -10,7 +10,7 @@ export function addTask(taskName, description, endDate) {
               taskName, description, endDate
           };
 
-          await axios.put(`https://taskscheduler-be7db.firebaseio.com/users/<${getState().auth.keyForBD}>/listOfTasks/${taskListLength}.json`, newTask)
+        await axios.put(`https://taskscheduler-be7db.firebaseio.com/users/<${getState().auth.keyForBD}>/listOfTasks/${taskListLength}.json`, newTask)
         dispatch(forReducer())
 
     }

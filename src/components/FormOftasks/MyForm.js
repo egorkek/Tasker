@@ -20,6 +20,7 @@ class MyForm extends React.Component {
 
     };
 
+
     render() {
 
         return (
@@ -37,6 +38,7 @@ class MyForm extends React.Component {
                 <label>Description: </label>
                 <input type="text" value={this.state.description} onChange={(e)=>this.onChangeInput(e, 'description')} />
                 <Button  type={'green'} onClick={()=>this.props.addTask(this.state.taskName, this.state.description, this.state.endDate)} >Add Task</Button>
+                <Button  type={'green'} onClick={()=>console.log(this.props)} >Add Task</Button>
             </div>
         )
     }
@@ -52,7 +54,7 @@ function mapStateToProps(state) {
 }
 function mapDispatchToProps(dispatch) {
     return{
-        addTask: (taskName, description, endDate)=>dispatch(addTask(taskName, description, endDate))
+        addTask: (taskName, description, endDate)=>dispatch(addTask(taskName, description, endDate)),
 
     }
 

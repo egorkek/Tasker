@@ -105,6 +105,12 @@ class Landing extends React.Component{
          })
 
      }
+     onEnterButtonClickHandler=()=>{
+         this.enterButtonClickHandler(1);
+
+
+
+        }
 
     render(){
 
@@ -121,7 +127,7 @@ class Landing extends React.Component{
                     <Input label={password.label} isValid={password.isValid} type={password.type} value={password.value} onChange={(e)=>this.onChangeHandler(e, password)}/>
                     <Button disabled={!this.state.allValid} onClick={()=>this.enterButtonClickHandler(0)}>Зарегестрироваться</Button>
                     <NavLink to={'/main'} >
-                        <Button type={'green'} disabled={!this.state.allValid} onClick={()=>this.enterButtonClickHandler(1)}>Войти</Button>
+                        <Button type={'green'} disabled={!this.state.allValid} onClick={()=>this.onEnterButtonClickHandler()}>Войти</Button>
                     </NavLink>
                 </div>
 
@@ -141,7 +147,7 @@ class Landing extends React.Component{
 
 function mapDispatchToProps(dispatch) {
     return{
-        auth:(email, password, isLogin)=> dispatch(auth(email,password, isLogin))
+        auth:(email, password, isLogin)=> dispatch(auth(email,password, isLogin)),
 
     }
     

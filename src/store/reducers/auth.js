@@ -2,7 +2,9 @@ const initialState={
     isLogin: false,
     username: false,
     idToken: '',
-    keyForBD: ''
+    keyForBD: '',
+    loading: true,
+    tasks: []
 };
 
 export default function authReducer(state = initialState, action) {
@@ -12,10 +14,31 @@ export default function authReducer(state = initialState, action) {
 
         case 'LOG_IN':
             return{
+                ...state,
                 isLogin: true,
                 username: action.email,
                 idToken: action.idToken,
                 keyForBD: action.keyForBD
+            };
+        case 'ADD_TASK':
+            return{
+                ...state
+            };
+        case 'FETCH_TASKS_START':
+            return{
+                ...state, loading: true
+            };
+        case 'FETCH_TASKS_SUCCESS':
+            return{
+                ...state,
+                tasks: action.tasks,
+                loading: false
+
+            };
+        case 'FETCH_TASKS_ERROR':
+            return{
+                ...state,
+                loading: false
             }
 
     }
