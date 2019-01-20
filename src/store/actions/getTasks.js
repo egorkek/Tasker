@@ -106,7 +106,6 @@ export function getTasks() {
 
         try {
             const response = await axios.get(`https://taskscheduler-be7db.firebaseio.com/users/${getState().auth.keyForBD}/listOfTasks.json`)
-            console.log(response.data)
             dispatch(fetchTasksSuccess(response.data));
 
 

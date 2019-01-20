@@ -1,8 +1,10 @@
 import React from 'react'
 import classes from './Task.css'
 import Button from '../../UI/Button/Button'
+import {connect} from 'react-redux'
+import {deleteTask} from '../../../store/actions/deleteTask'
 const Task = (props)=>{
-    console.log(props)
+    console.log(props);
     return(
         <div className={classes.Task}>
         {props.task.map((obj, index)=>{
@@ -13,7 +15,7 @@ const Task = (props)=>{
                     <small>{obj.endDate}</small>
                     </div>
                     <p>{obj.description}</p>
-                    <Button type={'red'}>Закончить таск</Button>
+                    <Button type={'red'} onClick={()=>props.deleteTask(index)} >Закончить таск</Button>
 
                 </li>
             )
@@ -25,4 +27,21 @@ const Task = (props)=>{
 
 };
 
-export default Task
+
+function mapStateToProps(state) {
+    return{
+        state: state
+    }
+
+}
+
+
+function mapDispatchToProps(dispatch){
+    return{
+        deleteTask: (index)=>dispatch(deleteTask(index))
+    }
+}
+
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(Task)

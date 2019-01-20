@@ -6,14 +6,16 @@ const ListOfTasks = (props)=>{
     console.log(props.tasks)
     return(
         <div className={classes.ListOfTasks}>
-            <ul>
-                <Task
-                    task={props.tasks}
+            {props.tasks ?
+                <ul>
+                    <Task
+                        task={props.tasks}
 
 
-
-                />
-            </ul>
+                    />
+                </ul>
+                : null
+            }
         </div>
 
     )

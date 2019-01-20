@@ -41,6 +41,12 @@ export default function authReducer(state = initialState, action) {
                 ...state,
                 loading: false
             }
+        case 'DELETE_TASK':{
+            return{
+                ...state,
+                tasks: action.tasks
+            }
+        }
 
     }
 

@@ -10,7 +10,10 @@ export function auth(email, password, isLogin) {
         if (!isLogin) {
             console.log(authData);
             const dataForBD = {
-                email
+                email,
+                listOfTasks:{
+
+                }
 
 
             };
@@ -25,7 +28,6 @@ export function auth(email, password, isLogin) {
 
         // const info = await axios.get(`https://taskscheduler-be7db.firebaseio.com/users/<${response.data.email.replace('@', '').replace('.', '')}>.json`);
         dispatch(login(authData.email, idToken, dbName));
-            console.log(getState().auth.keyForBD);
             dispatch(getTasks())
 
 

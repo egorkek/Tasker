@@ -1,7 +1,8 @@
-import axios from 'axios'
 export function addTask(taskName, description, endDate) {
     return async (dispatch, getState)=>{
-        const tasks = getState().auth.tasks;
+        let tasks = getState().auth.tasks;
+        if (!getState().auth.tasks)
+            tasks = []
         tasks.push({
             taskName, description, endDate
         })
