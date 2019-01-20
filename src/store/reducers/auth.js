@@ -47,6 +47,16 @@ export default function authReducer(state = initialState, action) {
                 tasks: action.tasks
             }
         }
+        case 'LOGOUT':
+            return{
+                isLogin: false,
+                username: false,
+                idToken: '',
+                keyForBD: '',
+                loading: true,
+                tasks: []
+
+            }
 
     }
 

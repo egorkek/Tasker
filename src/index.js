@@ -24,7 +24,8 @@ const store = createStore(
 );
 
 store.subscribe(()=>{
-    addTasksToBD(store)
+    addTasksToBD(store);
+    console.log('store chanaged',store.getState().auth)
 });
 
 const app = (
