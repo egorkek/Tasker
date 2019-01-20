@@ -38,7 +38,7 @@ class MyForm extends React.Component {
                 <label>Description: </label>
                 <input type="text" value={this.state.description} onChange={(e)=>this.onChangeInput(e, 'description')} />
                 <Button  type={'green'} onClick={()=>this.props.addTask(this.state.taskName, this.state.description, this.state.endDate)} >Add Task</Button>
-                <Button  type={'green'} onClick={()=>console.log(this.props)} >Add Task</Button>
+                <Button  type={'green'} onClick={()=>console.log(this.props.tasks)} >Add Task</Button>
             </div>
         )
     }

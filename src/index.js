@@ -8,6 +8,7 @@ import {createStore, applyMiddleware, compose} from 'redux'
 import {Provider} from 'react-redux'
 import rootReducer from './store/reducers/rootReducer'
 import thunk from 'redux-thunk'
+import {addTasksToBD} from './store/actions/AddingChangesToBD'
 
 const composeEnhancers =
     typeof window === 'object' &&
@@ -21,6 +22,10 @@ const store = createStore(
         applyMiddleware(thunk)
     )
 );
+
+store.subscribe(()=>{
+    addTasksToBD(store)
+});
 
 const app = (
     <Provider store={store}>

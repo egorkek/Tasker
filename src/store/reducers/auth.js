@@ -22,7 +22,8 @@ export default function authReducer(state = initialState, action) {
             };
         case 'ADD_TASK':
             return{
-                ...state
+                ...state,
+                tasks:action.tasks
             };
         case 'FETCH_TASKS_START':
             return{
