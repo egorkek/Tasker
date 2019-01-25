@@ -1,0 +1,28 @@
+.LogIn{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: url("../../images/loginBackground.png") no-repeat fixed;
+    display: flex;
+    background-size: cover;
+    color: white;
+    font-family: 'Roboto Slab', serif;
+    justify-content: center;
+    align-items: center;
+}
+
+.LogIn .Main{
+    height: 400px;
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.Buttons{
+    padding-top: 10px;
+}
+
+

@@ -7,7 +7,7 @@ return(
     <div className={classes.Input}>
         <label >{props.label}</label>
         <br/>
-        <input className={props.isValid ? null : classes.error } value={props.value} type={props.type} onChange={props.onChange}/>
+        <input className={props.isValid ? null : classes.error } placeholder={props.name} value={props.value} type={props.type} onChange={props.onChange}/>
     </div>
 )
 

@@ -13,34 +13,40 @@ class App extends Component {
         this.props.autoLogin()
 
     }
-    
-  render() {
-      let pages = (
-          <Switch>
-              <Route path={'/main'} component={Tasker}/>
 
-              <Route path={'/'} exact component={Landing}/>
-          </Switch>
+    render() {
+        console.log(this.props.isAutenticated)
+        let pages = '';
+        if (!this.props.isAutenticated)
+            pages = (
+                <Switch>
 
-      )
-      if (!this.props.isAutenticated){
-          pages = (
-              <Route path={'/'} exact component={Tasker}/>
+                    <Route path={'/'} component={Landing}/>
+                </Switch>
 
-          )
-      }
-    return (
-        <Layout>
-            {pages}
-        </Layout>
+            );
+        else
+            pages = (
+                <Switch>
+                    <Route path={'/'}  component={Tasker}/>
+                </Switch>
+            )
 
-    );
-  }
+
+
+
+        return (
+            <Layout>
+                {pages}
+            </Layout>
+
+        );
+    }
 }
 
 function mapStateToProps(state) {
     return{
-        isAutenticated: !!state.auth.token
+        isAutenticated: state.auth.isLogin
     }
 
 }

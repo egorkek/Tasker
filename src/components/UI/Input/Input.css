@@ -1,12 +1,15 @@
 .Input input{
     border: 1px solid grey;
     padding: 7px 10px;
-    border-radius: 15px;
+    border-radius: 10px;
     margin: 5px;
     outline: none;
+    width: 50%;
+    height: 20px;
 
 
 }
+
 
 .Input input:active{
     outline: none;

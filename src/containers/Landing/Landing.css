@@ -1,15 +1,58 @@
 .Landing{
-    display: grid;
     height: 100%;
-    grid-template-columns: 1fr 2fr;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
+    background: url("../../images/backgroundForLanding.png") no-repeat fixed;
+    display: flex;
 
+    background-size: cover;
+    color: white;
+    font-family: 'Roboto Slab', serif;
+    justify-content: center;
+    padding-top: 10vh;
+    z-index: 5;
+
+
+}
+.downed{
+    z-index: -100;
 }
 
 
-.Landing i {
-    font-size: 400px;
+.Landing h1 {
+    font-size: 40px;
+    text-align: center;
+
+
+}
+.Landing span{
+    font-size: 20px;
+}
+.Landing h2{
+    font-size: 18px;
+    text-align: center;
+
+}
+.Landing .btn{
+    text-align: center;
+}
+.Landing object{
+    height: 35px;
+    color: black;
+    padding-right: 10px;
+
+}
+.Landing li{
+    list-style: none;
+    margin-left: 0;
+    margin-top: 20px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+
+
+
+}
+.Landing ul p{
+
+    max-width: 500px;
 
 }

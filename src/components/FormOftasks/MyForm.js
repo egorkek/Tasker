@@ -3,6 +3,7 @@ import classes from './MyForm.css'
 import Button from '../UI/Button/Button'
 import {connect} from 'react-redux'
 import {addTask} from "../../store/actions/addTask";
+import {logout} from "../../store/actions/auth";
 
 class MyForm extends React.Component {
     state={
@@ -19,6 +20,16 @@ class MyForm extends React.Component {
         })
 
     };
+    onAddTaskHandler=()=>{
+        this.props.addTask(this.state.taskName, this.state.description, this.state.endDate)
+        this.setState({
+            taskName: '',
+            description: '',
+            endDate: ''
+
+        })
+
+    }
 
 
     render() {
@@ -37,7 +48,8 @@ class MyForm extends React.Component {
 
                 <label>Description: </label>
                 <input type="text" value={this.state.description} onChange={(e)=>this.onChangeInput(e, 'description')} />
-                <Button  type={'green'} onClick={()=>this.props.addTask(this.state.taskName, this.state.description, this.state.endDate)} >Add Task</Button>
+                <Button  type={'green'} onClick={()=>this.onAddTaskHandler()} >Add Task</Button>
+                <Button type={'red'} onClick={()=>this.props.logout()} >Выйти</Button>
             </div>
         )
     }
@@ -54,6 +66,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
     return{
         addTask: (taskName, description, endDate)=>dispatch(addTask(taskName, description, endDate)),
+        logout: ()=>dispatch(logout())
 
     }
 
